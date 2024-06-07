@@ -31,3 +31,4 @@ rozdziel([H|T], X, L1, [H|L2]) :- H >= X, rozdziel(T, X, L1, L2).
 
 powiel([], [], []).
 powiel([H|T], [0|LT], L) :- powiel(T, LT, L).
+powiel([H|T], [X|LT], [H|NT]) :- X > 0, X1 is X - 1, powiel([H|T], [X1|LT], NT).
